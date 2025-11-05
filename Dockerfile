@@ -1,2 +1,2 @@
-FROM quay.io/fedora/fedora:44
+FROM quay.io/fedora/fedora:43
 CMD ["echo", "hello world"]

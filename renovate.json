@@ -9,5 +9,22 @@
     "enabled": true,
     "automerge": true,
     "automergeType": "branch"
-  }
+  },
+  "packageRules": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "custom.rawhide_koji_composes",
+      "fileMatch": ["fedora-rawhide.repo"],
+      "depNameTemplate": "Compose ID",
+      "versioningTemplate": "loose",
+      "matchStrings": [
+        "baseurl=.*Fedora-Rawhide-(?<currentValue>.*)\\.n/compose/*"
+      ]
+    }
+  ],
+  "customDatasources": {
+    "rawhide_koji_composes": {
+      "defaultRegistryUrlTemplate": "https://kojipkgs.fedoraproject.org/compose/rawhide",
+      "format": "html"
+    }
 }
